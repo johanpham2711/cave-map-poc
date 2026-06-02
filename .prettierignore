@@ -1,0 +1,18 @@
+# Build outputs
+.next/
+out/
+node_modules/
+
+# Cesium copied assets
+public/cesium/
+
+# Lockfiles (let yarn/npm manage formatting)
+yarn.lock
+package-lock.json
+
+# Environment files
+.env*
+
+# Auto-generated types
+*.d.ts
+next-env.d.ts

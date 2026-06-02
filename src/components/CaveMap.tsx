@@ -46,11 +46,18 @@ function CaveModel({ onNodePlaced }: CaveModelProps) {
   /**
    * Handle a pointer (click) event on the GLTF mesh.
    * R3F automatically raycasts and gives us the intersection point.
+   *
+   * DRAG GUARD: R3F's ThreeEvent includes `delta` — the number of pixels
+   * the pointer moved between pointerdown and pointerup. If delta > 4px
+   * the user was dragging with OrbitControls, not clicking to place a node.
    */
   const handleClick = useCallback(
     (event: ThreeEvent<MouseEvent>) => {
       // Stop propagation so we don't bubble to the Canvas
       event.stopPropagation();
+
+      // Ignore drags — only place a node on a genuine click
+      if (event.delta > 4) return;
 
       const point = event.point.clone();
 
@@ -89,6 +96,10 @@ function FallbackCave({ onNodePlaced }: CaveModelProps) {
   const handleClick = useCallback(
     (event: ThreeEvent<MouseEvent>) => {
       event.stopPropagation();
+
+      // Drag guard — skip if user was panning/rotating with OrbitControls
+      if (event.delta > 4) return;
+
       const point = event.point.clone();
       console.log(
         `[CaveMap] Survey node intersection — X: ${point.x.toFixed(3)}, Y: ${point.y.toFixed(3)}, Z: ${point.z.toFixed(3)}`
