@@ -69,9 +69,7 @@ function LoadingScreen({ label }: { label: string }) {
       </div>
 
       {/* Label */}
-      <p className="text-biolum-400 font-mono text-sm tracking-widest uppercase">
-        {label}
-      </p>
+      <p className="text-biolum-400 font-mono text-sm tracking-widest uppercase">{label}</p>
       <p className="text-slate-600 text-xs mt-2">CaveMap POC</p>
 
       {/* Progress dots */}
@@ -129,19 +127,13 @@ export default function HomePage() {
         2. R3F / Three.js context is cheap to reinitialise.
       */}
       {isCave && (
-        <div
-          className="absolute inset-0 animate-fade-in"
-          style={{ zIndex: 2 }}
-        >
+        <div className="absolute inset-0 animate-fade-in" style={{ zIndex: 2 }}>
           <CaveMap />
         </div>
       )}
 
       {/* ── Overlay HUD — always on top ── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: 50 }}
-      >
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 50 }}>
         {/* Re-enable pointer events only on the panel itself, not the whole overlay div */}
         <div className="pointer-events-auto">
           <OverlayUI />

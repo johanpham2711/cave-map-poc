@@ -67,11 +67,9 @@ export const useCaveStore = create<CaveStore>()(
       viewMode: "EARTH",
       selectedCave: null,
 
-      enterCave: (cave) =>
-        set({ viewMode: "CAVE", selectedCave: cave }, false, "enterCave"),
+      enterCave: (cave) => set({ viewMode: "CAVE", selectedCave: cave }, false, "enterCave"),
 
-      resetToEarth: () =>
-        set({ viewMode: "EARTH", selectedCave: null }, false, "resetToEarth"),
+      resetToEarth: () => set({ viewMode: "EARTH", selectedCave: null }, false, "resetToEarth"),
     }),
     { name: "CaveStore" }
   )

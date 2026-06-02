@@ -227,8 +227,7 @@ function NodeLegend({ nodes }: { nodes: SurveyNode[] }) {
             <span className="text-xs font-mono text-slate-300">
               {n.label}&nbsp;
               <span className="text-slate-500">
-                ({n.position.x.toFixed(1)}, {n.position.y.toFixed(1)},{" "}
-                {n.position.z.toFixed(1)})
+                ({n.position.x.toFixed(1)}, {n.position.y.toFixed(1)}, {n.position.z.toFixed(1)})
               </span>
             </span>
           </li>
@@ -279,9 +278,7 @@ export default function CaveMap() {
         <Environment preset="night" />
 
         {/* ── Cave Geometry ── */}
-        <GLTFErrorBoundary
-          fallback={<FallbackCave onNodePlaced={handleNodePlaced} />}
-        >
+        <GLTFErrorBoundary fallback={<FallbackCave onNodePlaced={handleNodePlaced} />}>
           <Suspense fallback={<FallbackCave onNodePlaced={handleNodePlaced} />}>
             <CaveModel onNodePlaced={handleNodePlaced} />
           </Suspense>

@@ -98,10 +98,7 @@ export default function OverlayUI() {
   const isCaveMode = viewMode === "CAVE";
 
   return (
-    <div
-      className="absolute top-6 left-6 z-50 animate-slide-up"
-      style={{ maxWidth: 280 }}
-    >
+    <div className="absolute top-6 left-6 z-50 animate-slide-up" style={{ maxWidth: 280 }}>
       {/* ── Main panel ── */}
       <div className="glass glow-cyan scanline p-5 space-y-4">
         {/* Branding */}
@@ -115,9 +112,7 @@ export default function OverlayUI() {
             <span className="text-white text-xs font-bold">CM</span>
           </div>
           <div>
-            <p className="text-white font-semibold text-sm leading-none">
-              CaveMap POC
-            </p>
+            <p className="text-white font-semibold text-sm leading-none">CaveMap POC</p>
             <p className="text-slate-400 text-xs mt-0.5">3D Diving Platform</p>
           </div>
         </div>
@@ -127,9 +122,7 @@ export default function OverlayUI() {
 
         {/* Mode badge */}
         <div className="flex items-center justify-between">
-          <span className="text-slate-400 text-xs uppercase tracking-widest">
-            Mode
-          </span>
+          <span className="text-slate-400 text-xs uppercase tracking-widest">Mode</span>
           <span className={`mode-badge ${isCaveMode ? "cave" : "earth"}`}>
             {isCaveMode ? <CaveIcon /> : <GlobeIcon />}
             {isCaveMode ? "Cave View" : "Earth View"}
@@ -143,12 +136,8 @@ export default function OverlayUI() {
 
             {/* Cave name */}
             <div>
-              <p className="text-slate-400 text-xs uppercase tracking-widest mb-1">
-                Active Site
-              </p>
-              <p className="text-white font-semibold text-sm">
-                {selectedCave.name}
-              </p>
+              <p className="text-slate-400 text-xs uppercase tracking-widest mb-1">Active Site</p>
+              <p className="text-white font-semibold text-sm">{selectedCave.name}</p>
             </div>
 
             {/* Location */}
@@ -176,9 +165,7 @@ export default function OverlayUI() {
             </div>
 
             {/* Description */}
-            <p className="text-slate-400 text-xs leading-relaxed">
-              {selectedCave.description}
-            </p>
+            <p className="text-slate-400 text-xs leading-relaxed">{selectedCave.description}</p>
           </div>
         )}
 
@@ -195,7 +182,8 @@ export default function OverlayUI() {
             onClick={resetToEarth}
             className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 animate-slide-up"
             style={{
-              background: "linear-gradient(135deg, rgba(34,211,238,0.15) 0%, rgba(8,145,178,0.15) 100%)",
+              background:
+                "linear-gradient(135deg, rgba(34,211,238,0.15) 0%, rgba(8,145,178,0.15) 100%)",
               border: "1px solid rgba(34,211,238,0.3)",
               color: "#22D3EE",
             }}

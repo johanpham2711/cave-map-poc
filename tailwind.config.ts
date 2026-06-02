@@ -21,7 +21,7 @@ const config: Config = {
           700: "#072840",
         },
         biolum: {
-          400: "#22D3EE",  // cyan glow
+          400: "#22D3EE", // cyan glow
           500: "#06B6D4",
           600: "#0891B2",
         },
@@ -31,8 +31,7 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "abyss-radial":
-          "radial-gradient(ellipse at center, #051C2E 0%, #020B12 100%)",
+        "abyss-radial": "radial-gradient(ellipse at center, #051C2E 0%, #020B12 100%)",
       },
       animation: {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",

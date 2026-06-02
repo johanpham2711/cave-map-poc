@@ -30,7 +30,7 @@ import {
   Entity,
   PointGraphics,
   LabelGraphics,
-  useCesium,          // gives us the Cesium viewer inside the Resium context
+  useCesium, // gives us the Cesium viewer inside the Resium context
 } from "resium";
 import {
   Ion,
@@ -50,7 +50,7 @@ const CESIUM_TOKEN = process.env.NEXT_PUBLIC_CESIUM_ION_TOKEN;
 if (!CESIUM_TOKEN) {
   throw new Error(
     "[EarthMap] Missing env var: NEXT_PUBLIC_CESIUM_ION_TOKEN\n" +
-    "Copy .env.example → .env.local and set your token from https://cesium.com/ion/tokens"
+      "Copy .env.example → .env.local and set your token from https://cesium.com/ion/tokens"
   );
 }
 
@@ -138,7 +138,7 @@ const CAVE_SITES: CaveSite[] = [
     gltfPath: "/models/mock_cave.glb",
     description: "Sistema Dos Ojos is a large sinkhole in Quintana Roo, Mexico.",
     depthM: 21,
-  }
+  },
 ];
 
 // ── Static Cesium colors ──────────────────────────────────────────
@@ -263,7 +263,14 @@ function HoverTooltip({ site, x, y, containerWidth }: TooltipProps) {
               padding: "6px 8px",
             }}
           >
-            <p style={{ fontSize: 9, color: "#475569", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            <p
+              style={{
+                fontSize: 9,
+                color: "#475569",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+              }}
+            >
               Depth
             </p>
             <p style={{ fontSize: 12, fontWeight: 600, color: "#22D3EE", fontFamily: "monospace" }}>
@@ -278,7 +285,14 @@ function HoverTooltip({ site, x, y, containerWidth }: TooltipProps) {
               padding: "6px 8px",
             }}
           >
-            <p style={{ fontSize: 9, color: "#475569", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            <p
+              style={{
+                fontSize: 9,
+                color: "#475569",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+              }}
+            >
               Coords
             </p>
             <p style={{ fontSize: 10, color: "#22D3EE", fontFamily: "monospace" }}>
@@ -428,12 +442,12 @@ export default function EarthMap() {
                 color={isHovered ? COLOR_HOVER : COLOR_DEFAULT}
                 outlineColor={isHovered ? COLOR_HOVER_OUTLINE : COLOR_DEFAULT_OUTLINE}
                 outlineWidth={2}
-              /*
-               * disableDepthTestDistance is intentionally NOT set here.
-               * Setting it to Infinity makes markers visible through the globe
-               * (i.e. on the opposite hemisphere). Cesium's default depth test
-               * correctly hides occluded markers, which is the desired behavior.
-               */
+                /*
+                 * disableDepthTestDistance is intentionally NOT set here.
+                 * Setting it to Infinity makes markers visible through the globe
+                 * (i.e. on the opposite hemisphere). Cesium's default depth test
+                 * correctly hides occluded markers, which is the desired behavior.
+                 */
               />
 
               {/* Site name label */}
@@ -481,7 +495,7 @@ export default function EarthMap() {
                 pixelSize={isHovered ? 44 : 32}
                 color={isHovered ? COLOR_RING_HOVER : COLOR_RING_DEFAULT}
                 outlineWidth={0}
-              // No disableDepthTestDistance — ring also hides with the globe
+                // No disableDepthTestDistance — ring also hides with the globe
               />
             </Entity>
           );

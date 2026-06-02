@@ -53,11 +53,15 @@ body,
 
 /* ── Glow utilities ── */
 .glow-cyan {
-  box-shadow: 0 0 24px rgba(34, 211, 238, 0.2), 0 0 8px rgba(34, 211, 238, 0.1);
+  box-shadow:
+    0 0 24px rgba(34, 211, 238, 0.2),
+    0 0 8px rgba(34, 211, 238, 0.1);
 }
 
 .glow-coral {
-  box-shadow: 0 0 24px rgba(251, 146, 60, 0.3), 0 0 8px rgba(251, 146, 60, 0.15);
+  box-shadow:
+    0 0 24px rgba(251, 146, 60, 0.3),
+    0 0 8px rgba(251, 146, 60, 0.15);
 }
 
 /* ── Animated scan line overlay (decorative) ── */
