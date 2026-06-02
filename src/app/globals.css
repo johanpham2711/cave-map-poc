@@ -1,0 +1,107 @@
+/* ──────────────────────────────────────────────────────────
+   Global styles — Cave Diving 3D Map POC
+   ────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base reset ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #020b12;
+  color: #e2e8f0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ── Cesium widget overrides ── */
+.cesium-widget-credits {
+  display: none !important;
+}
+.cesium-viewer-toolbar {
+  display: none !important;
+}
+.cesium-viewer-animationContainer {
+  display: none !important;
+}
+.cesium-viewer-timelineContainer {
+  display: none !important;
+}
+.cesium-viewer-bottom {
+  display: none !important;
+}
+
+/* ── Glassmorphism utility ── */
+.glass {
+  background: rgba(5, 28, 46, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  border-radius: 16px;
+}
+
+/* ── Glow utilities ── */
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.2), 0 0 8px rgba(34, 211, 238, 0.1);
+}
+
+.glow-coral {
+  box-shadow: 0 0 24px rgba(251, 146, 60, 0.3), 0 0 8px rgba(251, 146, 60, 0.15);
+}
+
+/* ── Animated scan line overlay (decorative) ── */
+.scanline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(34, 211, 238, 0.015) 2px,
+    rgba(34, 211, 238, 0.015) 4px
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ── Mode badge pill ── */
+.mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mode-badge.earth {
+  background: rgba(34, 211, 238, 0.12);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+.mode-badge.cave {
+  background: rgba(251, 146, 60, 0.12);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+/* ── Scrollbar (hidden) ── */
+::-webkit-scrollbar {
+  display: none;
+}
